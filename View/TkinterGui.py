@@ -79,21 +79,25 @@ class TkinterGui:
         height_diff = clientHeight - windowHeight
         width_diff = clientWidth - windowWidth
 
+        self.root.geometry("+0+0")
         if(len(self.argv) == 3):
             if(self.argv[1] == "--top"):
                 if(self.argv[2] == "--right"):
                     self.root.geometry("+{0}+{1}".format(width_diff, 0))
                     self.inverse = True
-                if(self.argv[2] == "--left"):
+                elif(self.argv[2] == "--left"):
                     self.root.geometry("+{0}+{1}".format(0,0))
+                   
             if(self.argv[1] == "--bottom"):
                 if(self.argv[2] == "--right"):
                     self.root.geometry("+{0}+{1}".format(width_diff, height_diff - 40))
                     self.inverse = True
-                if(self.argv[2] == "--left"):
+                elif(self.argv[2] == "--left"):
                     self.root.geometry("+{0}+{1}".format(0, height_diff - 40))
-        else:
-            self.root.geometry("+0+0")
+                else:
+                    self.root.geometry("+{0}+{1}".format(0, height_diff - 40))
+                            
+
     def refresh_label(self):
         """ refresh the content of the label every second """
         #if we've reached the end of our list, cycle back to the start
