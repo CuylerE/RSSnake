@@ -1,6 +1,13 @@
-import TkinterGui
-import tkinter
-from tkinter import ttk
+import sys
+from View.TkinterGui import TkinterGui
 
+# Variables
+TIME_LOOP = 5000 # Seconds
+    
+
+# This will loop through the library of URLs and show them in the gui 
 if __name__ == '__main__':
-    window = TkinterGui.TkinterGui()
+    feed = TkinterGui(TIME_LOOP, sys.argv)
+
+    
+    
